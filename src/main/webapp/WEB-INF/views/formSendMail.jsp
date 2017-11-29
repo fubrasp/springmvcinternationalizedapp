@@ -9,9 +9,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Send mails</title>
-    <link rel="stylesheet" href="<c:url value="foundation-6.4.2-complete/css/foundation.min.css"/>">
-    <link rel="stylesheet" href="<c:url value="foundation-6.4.2-complete/css/app.css"/>">
-    <script src="foundation-6.4.2-complete/js/app.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
 </head>
 <body>
 

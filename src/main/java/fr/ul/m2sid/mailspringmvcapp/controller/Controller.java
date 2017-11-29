@@ -7,11 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Locale;
 
 @org.springframework.stereotype.Controller
 public class Controller {
@@ -36,7 +34,7 @@ public class Controller {
     @PostMapping("/sendMail")
     public String sendMail(String name, String email, String subject, String content){
         System.out.println(name+" "+email+" "+content);
-        mailSender.send("["+email+"_"+name+"]" + subject, content);
+        mailSender.send(email, "["+email+"_"+name+"]" + subject, content);
         return "redirect:/";
     }
 

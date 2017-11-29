@@ -17,7 +17,7 @@ public class MailSender implements IMailSender{
 
     Properties props = new Properties();
 
-    public void send(String subject, String content) {
+    public void send(String mailFrom, String subject, String content) {
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.host", "smtp.mailtrap.io");
@@ -33,9 +33,9 @@ public class MailSender implements IMailSender{
         try {
 
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("mail.adresse.sid@laposte.net"));
+            message.setFrom(new InternetAddress(mailFrom));
             message.setRecipients(Message.RecipientType.TO,
-                    InternetAddress.parse("id.said@live.fr"));
+                    InternetAddress.parse("support@test.fr"));
             message.setSubject(subject);
             message.setText(content);
 
