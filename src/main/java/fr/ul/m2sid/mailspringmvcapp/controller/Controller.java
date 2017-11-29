@@ -40,6 +40,7 @@ public class Controller {
 
     @ExceptionHandler(Exception.class)
     public String handleErrors(Exception ex, Model model){
+        ex.printStackTrace();
         model.addAttribute("error", ex.toString());
         return "redirect:/sendMail";
     }

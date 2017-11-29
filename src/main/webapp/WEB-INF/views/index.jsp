@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title><spring:message code="title" /></title>
+    <title><spring:message code="index.title" /></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
 </head>
@@ -17,22 +17,22 @@
 
 <div>
     <div class="medium-12 cell">
-        <a href="/sendMail" class="button"><spring:message code="sendMail" /></a>
+        <a href="/sendMail" class="button"><spring:message code="index.sendMail" /></a>
     </div>
 </div>
 
 <c:choose>
     <c:when test="${fn:length(messages) eq 0}">
-        <h1><spring:message code="boxEmpty" /></h1>
+        <h1><spring:message code="index.boxEmpty" /></h1>
     </c:when>
     <c:otherwise>
         <table>
             <thead>
             <tr>
                 <th width="200">ID</th>
-                <th width="200"><spring:message code="sender" /></th>
-                <th width="50"><spring:message code="subject" /></th>
-                <th width="300"><spring:message code="content" /></th>
+                <th width="200"><spring:message code="index.sender" /></th>
+                <th width="50"><spring:message code="index.subject" /></th>
+                <th width="300"><spring:message code="index.content" /></th>
             </tr>
             </thead>
             <tbody>
