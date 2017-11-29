@@ -44,5 +44,7 @@
         </div>
     </div>
 </form>
+<c:if test="${errors != null}"><p>${errors}</p></c:if>
+
 </body>
 </html>
