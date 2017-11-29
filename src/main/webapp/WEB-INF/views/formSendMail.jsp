@@ -20,26 +20,22 @@
     <div class="grid-container">
         <div class="grid-x grid-padding-x">
             <div class="medium-12 cell">
-                <spring:message code="sendmailform.name" />
-                <label>
+                <label><spring:message code="sendmailform.name" />
                     <input type="text" name="name" placeholder="<spring:message code="sendmailform.name" />">
                 </label>
             </div>
             <div class="medium-12 cell">
-                <spring:message code="sendmailform.email" />
-                <label>
+                <label><spring:message code="sendmailform.email" />
                     <input type="text" name="email" placeholder="<spring:message code="sendmailform.email" />">
                 </label>
             </div>
             <div class="medium-12 cell">
-                <sping:message code="sendmailform.subject" />
-                <label>
+                <label><sping:message code="sendmailform.subject" />
                     <input type="text" name="subject" placeholder="<spring:message code="sendmailform.subject" />">
                 </label>
             </div>
             <div class="medium-12 cell">
-                <spring:message code="sendmailform.content" />
-                <label>
+                <label><spring:message code="sendmailform.content" />
                     <input type="text" name="content" placeholder="<spring:message code="sendmailform.content" />">
                 </label>
             </div>
