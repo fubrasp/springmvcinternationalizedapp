@@ -8,7 +8,7 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 @Service
-public class MailSender implements IMailSender{
+public class MailSender implements NotificationSender {
 
     //mail.adresse.sid@laposte.net
     //MailSid2017

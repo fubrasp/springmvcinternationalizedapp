@@ -4,6 +4,6 @@ import fr.ul.m2sid.mailspringmvcapp.metier.Message;
 
 import java.util.ArrayList;
 
-public interface IMailReceiver {
+public interface NotificationReceiver {
     public ArrayList<Message> checkMail();
 }

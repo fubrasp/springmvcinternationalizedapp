@@ -1,7 +1,7 @@
 package fr.ul.m2sid.mailspringmvcapp.controller;
 
-import fr.ul.m2sid.mailspringmvcapp.mail.IMailReceiver;
-import fr.ul.m2sid.mailspringmvcapp.mail.IMailSender;
+import fr.ul.m2sid.mailspringmvcapp.mail.NotificationReceiver;
+import fr.ul.m2sid.mailspringmvcapp.mail.NotificationSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -9,19 +9,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 @org.springframework.stereotype.Controller
 public class Controller {
 
     @Autowired
-    public IMailSender mailSender;
+    public NotificationSender mailSender;
     @Autowired
-    public IMailReceiver mailReceiver;
+    public NotificationReceiver mailReceiver;
 
     @GetMapping("/")
     public String defaultPage(Model model){
-        ArrayList<fr.ul.m2sid.mailspringmvcapp.metier.Message> messages = mailReceiver.checkMail();
+        ArrayList<fr.ul.m2sid.mailspringmvcapp.metier.Message> messages = mailReceiver.receive();
         model.addAttribute("messages", messages);
         return "index";
     }

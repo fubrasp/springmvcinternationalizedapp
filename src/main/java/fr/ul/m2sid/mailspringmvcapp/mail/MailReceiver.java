@@ -1,14 +1,13 @@
 package fr.ul.m2sid.mailspringmvcapp.mail;
 
 import org.springframework.stereotype.Service;
-import sun.management.resources.agent_fr;
 
 import javax.mail.*;
 import java.util.ArrayList;
 import java.util.Properties;
 
 @Service
-public class MailReceiver implements IMailReceiver {
+public class MailReceiver implements NotificationReceiver {
 
     //Set mail properties and configure accordingly
     String hostval = "smtp.mailtrap.io";
@@ -16,7 +15,7 @@ public class MailReceiver implements IMailReceiver {
     String uname = "75f1ea16e05565";
     String pwd = "06551260b74810";
 
-    public ArrayList<fr.ul.m2sid.mailspringmvcapp.metier.Message> checkMail(){
+    public ArrayList<fr.ul.m2sid.mailspringmvcapp.metier.Message> receive(){
         ArrayList<fr.ul.m2sid.mailspringmvcapp.metier.Message> messages = new ArrayList<fr.ul.m2sid.mailspringmvcapp.metier.Message>();
         try {
             //Set property values
