@@ -15,7 +15,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
 </head>
 <body>
-
+<p><spring:message code="index.errormanagement" /></p>
+<a href="/sendMail?lang=en">EN</a>
+<a href="/sendMail?lang=fr_FR">FR</a>
 <form method="post" action="/sendMail">
     <div class="grid-container">
         <div class="grid-x grid-padding-x">
