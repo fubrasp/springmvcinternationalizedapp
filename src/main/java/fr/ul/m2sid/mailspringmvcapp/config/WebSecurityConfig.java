@@ -12,27 +12,30 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()
-                .antMatchers("/resources/**", "webapp/**").permitAll()
-                .anyRequest().authenticated();
-
-        http
-                .authorizeRequests()
-                .antMatchers("/send-mail", "/check-mail")
+        /*http.
+                authorizeRequests()
+                .antMatchers("/check-mail", "send-mail")
                 .authenticated();
-
+        */
         http
+                .authorizeRequests()
+                .antMatchers("/resources/**", "/webapp/**").permitAll()
+                .anyRequest().authenticated()
+                .and()
                 .formLogin()
                 .loginPage("/login")
                 .permitAll()
                 .and()
-                .antMatcher("/logout")
                 .logout()
                 .permitAll()
-                /*.and()
-                .csrf()
-                .disable()*/;
+                .and()
+                .csrf();
+
+        http
+                .authorizeRequests()
+                .antMatchers("check-mail", "send-mail")
+                .access("hasRole('USER')");
+
     }
 
     @Autowired
@@ -42,5 +45,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser("test")
                 .password("test")
                 .roles("USER");
+
+        auth
+                .inMemoryAuthentication()
+                .withUser("admin")
+                .password("admin")
+                .roles("ADMIN");
     }
 }

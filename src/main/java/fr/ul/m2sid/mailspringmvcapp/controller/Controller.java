@@ -19,7 +19,7 @@ public class Controller {
     @Autowired
     public NotificationReceiver mailReceiver;
 
-    @GetMapping("/check-mail")
+    @GetMapping({"/check-mail", "/"})
     public String defaultPage(Model model){
         ArrayList<fr.ul.m2sid.mailspringmvcapp.metier.Message> messages = mailReceiver.receive();
         model.addAttribute("messages", messages);

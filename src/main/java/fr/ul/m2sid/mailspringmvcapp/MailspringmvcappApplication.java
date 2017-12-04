@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.core.Ordered;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -67,9 +68,9 @@ public class MailspringmvcappApplication extends WebMvcConfigurerAdapter {
 		return viewResolver;
 	}
 
-	@Override
+	/*@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
-		//registry.addViewController("/home").setViewName("home");
 		registry.addViewController("/login").setViewName("login");
-	}
+		registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
+	}*/
 }
