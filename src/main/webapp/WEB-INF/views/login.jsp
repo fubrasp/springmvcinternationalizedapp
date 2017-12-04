@@ -38,8 +38,8 @@
         </div>
     </div>
 </form>
-<c:if test="${param.error}"><p><spring:message code="loginform.badcredentials" /></p></c:if>
-<c:if test="${param.logout}"><p><spring:message code="loginform.logoutmessage" /></p></c:if>
+<c:if test="${model.error}"><p><spring:message code="loginform.badcredentials" /></p></c:if>
+<c:if test="${model.msg}"><p><spring:message code="loginform.logoutmessage" /></p></c:if>
 
 </body>
 </html>

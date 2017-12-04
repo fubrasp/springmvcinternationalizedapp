@@ -19,7 +19,7 @@
 <a href="/?lang=fr_FR">FR</a>
 <div>
     <div class="medium-12 cell">
-        <a href="/sendMail" class="button"><spring:message code="index.sendMail"/></a>
+        <a href="/send-mail" class="button"><spring:message code="index.sendMail"/></a>
     </div>
 </div>
 
