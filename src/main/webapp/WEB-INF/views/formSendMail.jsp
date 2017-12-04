@@ -18,7 +18,8 @@
 <p><spring:message code="index.errormanagement" /></p>
 <a href="/sendMail?lang=en">EN</a>
 <a href="/sendMail?lang=fr_FR">FR</a>
-<form method="post" action="/sendMail">
+<form method="post" action="/send-mail">
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     <div class="grid-container">
         <div class="grid-x grid-padding-x">
             <div class="medium-12 cell">
