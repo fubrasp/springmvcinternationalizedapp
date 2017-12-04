@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.jws.WebParam;
 import java.util.ArrayList;
 
 @org.springframework.stereotype.Controller
@@ -18,19 +19,19 @@ public class Controller {
     @Autowired
     public NotificationReceiver mailReceiver;
 
-    @GetMapping("/")
+    @GetMapping("/check-mail")
     public String defaultPage(Model model){
         ArrayList<fr.ul.m2sid.mailspringmvcapp.metier.Message> messages = mailReceiver.receive();
         model.addAttribute("messages", messages);
         return "index";
     }
 
-    @GetMapping("/sendMail")
+    @GetMapping("/send-mail")
     public String getSendMailForm(){
         return "formSendMail";
     }
 
-    @PostMapping("/sendMail")
+    @PostMapping("/send-mail")
     public String sendMail(String name, String email, String subject, String content){
         System.out.println(name+" "+email+" "+content);
         mailSender.send(email, "["+email+"_"+name+"]" + subject, content);

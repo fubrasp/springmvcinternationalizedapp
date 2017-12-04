@@ -48,6 +48,15 @@
     </div>
 </form>
 <c:if test="${errors != null}"><p>${errors}</p></c:if>
-
+<form method="post" action="/logout">
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <div class="medium-12 cell">
+                <button type="submit" class="alert button"><spring:message code="loginform.logout" /></button>
+            </div>
+        </div>
+    </div>
+</form>
 </body>
 </html>
